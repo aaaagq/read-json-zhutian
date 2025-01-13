@@ -15,6 +15,7 @@ namespace 读取json分析修改
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,8 +31,11 @@ namespace 读取json分析修改
 
             }
         }
-        void init() 
-        { 
+        void init()
+        {
+            Directory.CreateDirectory(MyZIP.path1);
+            Directory.CreateDirectory(MyZIP.path2);
+            Directory.CreateDirectory(MyZIP.path3);
             myJsonTool.init();
             listBox1.Items.Clear();
 
@@ -97,6 +101,33 @@ namespace 读取json分析修改
         private void button3_Click(object sender, EventArgs e)
         {
             init();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string file1 = MyZIP.path1 + "gg.json";
+            string file2 = MyZIP.path3 + "gg.json";
+            if (File.Exists(file1))
+            {
+                MyZIP.ExtractGG();
+                string str1 = File.ReadAllText(file1);
+                string str2 = File.ReadAllText(file2);
+                if (str1 == str2)
+                {
+                    var getJson = MessageBox.Show(
+                        "只有首次或者才更新游戏才需要重新获取json。\r\n不建议再次获取json。\r\n点击【确认】后确认获取json。",
+                        "警告", MessageBoxButtons.OKCancel);
+                    if (getJson.ToString() != "OK") return;
+                }
+            }
+            MyZIP.ExtractToFile();
+            init();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MyZIP.Update();
+            MessageBox.Show("已保存！");
         }
     }
 

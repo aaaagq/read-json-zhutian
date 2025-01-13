@@ -32,6 +32,8 @@
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
             panel4 = new Panel();
+            button5 = new Button();
+            button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -48,9 +50,9 @@
             listBox1.Dock = DockStyle.Left;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 17;
-            listBox1.Location = new Point(0, 43);
+            listBox1.Location = new Point(0, 108);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(228, 384);
+            listBox1.Size = new Size(228, 319);
             listBox1.TabIndex = 2;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -77,18 +79,41 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(button5);
+            panel4.Controls.Add(button4);
             panel4.Controls.Add(button3);
             panel4.Controls.Add(button2);
             panel4.Controls.Add(button1);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(234, 43);
+            panel4.Size = new Size(234, 108);
             panel4.TabIndex = 5;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(3, 76);
+            button5.Name = "button5";
+            button5.Size = new Size(172, 23);
+            button5.TabIndex = 7;
+            button5.Text = "保存到package.nw";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button4
+            // 
+            button4.ForeColor = Color.Red;
+            button4.Location = new Point(3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(172, 26);
+            button4.TabIndex = 6;
+            button4.Text = "从package.nw获取json";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(181, 11);
+            button3.Location = new Point(181, 6);
             button3.Name = "button3";
             button3.Size = new Size(47, 23);
             button3.TabIndex = 5;
@@ -98,7 +123,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(3, 4);
+            button2.Location = new Point(3, 36);
             button2.Name = "button2";
             button2.Size = new Size(69, 36);
             button2.TabIndex = 3;
@@ -108,7 +133,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(78, 4);
+            button1.Location = new Point(108, 36);
             button1.Name = "button1";
             button1.Size = new Size(67, 36);
             button1.TabIndex = 4;
@@ -162,5 +187,7 @@
         private TextBox textBox1;
         private Panel panel4;
         private Button button3;
+        private Button button5;
+        private Button button4;
     }
 }
