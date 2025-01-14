@@ -52,6 +52,7 @@ namespace 读取json分析修改
                 foreach (string file1 in Directory.GetFiles(path2))
                 {
                     file2 = file1.Replace(path2, "");
+                    archive.GetEntry(file2).Delete();
                     archive.CreateEntryFromFile(file1, file2);
                 }
 
